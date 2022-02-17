@@ -1,0 +1,47 @@
+<body>
+    <div class="header"></div>
+
+        <div class="title">
+            <h1>The Gossip Project</h1>
+            <div>
+                <h6>><a href="/">Home Page</h6></a>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <div>
+                    <a class="navbar-brand" href="#">Be prepared.</a>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="<%=new_gossip_path%>">Write a Gossip.</a></li>
+                        <li><a href="<%=new_user_path%>">Sign up</a></li>
+                        <li><a href="<%=new_session_path%>">Sign in</a></li>
+                        <li><a href="/team">Team</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main">
+        <div class="accueil_text">
+            <h2>Welcome in the Gossip World of The Hacking Project</h2>
+        </div>
+
+        <div>
+            <h4>Here is the Updated Gossip List</h4>
+            <hr> 
+
+            <p><%= @gossips.all.each_with_index do |gossip, index|%></p>
+                <p><strong><%= gossip.user.first_name %> <%= gossip.user.last_name %></strong></p> 
+                <p><%= gossip.title %></p> 
+                <p><%= gossip.content %></p>
+                <button class="btn btn-warning"><a href="<%= gossip_path(gossip.id) %>">Open this Gossip</button>
+            <hr>  
+            <p><% end %></p>
+        </div>
+    </div>
+</body>

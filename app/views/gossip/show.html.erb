@@ -1,0 +1,49 @@
+<body>
+    <div class="header"></div>
+        <div class="title">
+            <h1>The Gossip Project</h1>
+            <div>
+                <h6>><a href="/">Home Page</h6></a>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Gossip n°: <%= @gossip.id %></a>
+                <button class="btn btn-warning"><a href="<%= new_comment_path(@gossip.id) %>">Comment</a></button>
+                <button class="btn btn-warning"><a href="<%= edit_gossip_path(@gossip.id) %>">Update</a></button>
+                <button class="btn btn-warning"><a href="<%= gossip_path(@gossip.id) %>" data-confirm="êtes-vous sur?" data-method="DELETE">Delete</a></button>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <div class="main">
+        <div>
+            <p><strong>Title</strong></p>
+                <%= @gossip.title %>
+            <p></p>
+            <p><strong>Content</strong></p>
+                <%= @gossip.content %>
+            <br>
+            <br>
+            <br>
+            <p><strong><em>From</em></strong></p>
+            <a href="/user/<%= @gossip.user_id %>"><%= @gossip.user.first_name %> <%= @gossip.user.last_name %></a><br>
+            <a href="<%= city_path(@gossip.user.city.id) %>"><em><%= @gossip.user.city.name %></em></a>
+            <br>
+            <br>        
+            <br>
+            <br>
+        </div>
+        <div>
+            <hr>
+            <p><strong>Comments list :</strong></p>
+
+            <p><%= @comments.all.each_with_index do |comments, index| %></p>
+            <p><%= comments.content %></p>
+            <button class="btn btn-warning"><a href="<%= gossip_path(gossip.id) %>">like</button>     <button class="btn btn-warning"><a href="<%= gossip_path(gossip.id) %>">dislike</button>
+            <p><% end %></p>
+        </div>
+    </div>
+</body>

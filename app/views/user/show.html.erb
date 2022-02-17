@@ -1,0 +1,38 @@
+<body>
+    <div class="header"></div>
+        <div class="title">
+            <h1>The Gossip Project</h1>
+            <div>
+                <h6>><a href="/">Home Page</h6></a>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Auteur : <%= @user.first_name %> <%= @user.last_name %></a>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <div class="main">
+        <p></p>
+        <p><strong>Last Name</strong></p>
+            <%= @user.last_name %>
+        <p></p>
+        <p><strong>First Name</strong></p>
+            <%= @user.first_name %>
+        <p></p>
+        <p><strong>Description</strong></p>
+            <%= @user.description %>
+        <p></p>
+        <p><strong>Age</strong></p>
+            <%= @user.age %>
+        <p></p>
+        <p><strong>E-mail</strong></p>
+            <%= @user.email%>
+        <p></p>
+        <p><strong>City</strong></p>
+            <a href="<%= city_path(@user.city.id) %>"><em><%= @user.city.name %></em></a>
+    </div>
+</body>

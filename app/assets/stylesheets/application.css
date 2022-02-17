@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(145, 185, 255);
+}
+
+.title{
+    background-color: blue;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px
+}
+
+form{
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 750px;
+    margin-bottom: 15px;
+    
+}
+
+.accueil_text{
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+
+.form-group {
+    resize: none;
+ }
+
+
+.new_is_ok_banner{
+    background-color: green;
+}
+
+.main{
+    padding: 20px
+}
