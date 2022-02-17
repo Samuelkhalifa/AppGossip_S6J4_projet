@@ -40,8 +40,8 @@
             <hr>
             <p><strong>Comments list :</strong></p>
 
-            <p><%= @comments.all.each_with_index do |comments, index| %></p>
-            <p><%= comments.content %></p>
+            <p><%= @comments.all.each do |comments| %></p>
+            <p><%= comment.content %></p>
             <button class="btn btn-warning"><a href="<%= gossip_path(gossip.id) %>">like</button>     <button class="btn btn-warning"><a href="<%= gossip_path(gossip.id) %>">dislike</button>
             <p><% end %></p>
         </div>

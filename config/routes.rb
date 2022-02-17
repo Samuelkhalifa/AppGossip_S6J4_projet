@@ -18,7 +18,9 @@ Rails.application.routes.draw do
 
 
     #Controller_Gossip
-  resources :gossip
+  resources :gossip do
+    resources :comment
+  end
 
   
     #Controller_City
